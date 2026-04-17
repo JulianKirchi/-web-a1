@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dynamische Daten</title>
+</head>
+<body>
 
+<h1>Dynamische Daten</h1>
+
+<p id="Datum"></p>
+
+<script>
+document.getElementById("datum").innerHTML =
+"Heutiges Datum:17.04.26 " + new Date().toLocaleDateString();
+</script>
+
+<a href="index.html">Zurück zur Startseite</a>
+
+</body>
+</html>
