@@ -8,12 +8,60 @@
 
 <h1>Dynamische Daten</h1>
 
-<p id="Datum"></p>
+<h2>Linzer Stadtteile</h2>
+<ul id="liste-linz"></ul>
+
+<h2>Service Linz (Usernamen)</h2>
+<ul id="service-linz"></ul>
+
 
 <script>
-document.getElementById("datum").innerHTML =
-"Heutiges Datum:17.04.26 " + new Date().toLocaleDateString();
+
+// 5.a Array mit Linzer Stadtteilen + Julian + Anita
+
+let stadtteile = [
+"Urfahr",
+"Auwiesen",
+"Pichling",
+Rainer Kirchstorfer
+Anita Kirchstorfer
+];
+
+// Liste füllen
+
+let liste = document.getElementById("liste-linz");
+
+stadtteile.forEach(function(eintrag) {
+
+let li = document.createElement("li");
+li.textContent = eintrag;
+liste.appendChild(li);
+
+});
+
+
+// 5.d Daten von Online-Testserver laden
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(response => response.json())
+.then(users => {
+
+let serviceListe = document.getElementById("service-linz");
+
+users.forEach(user => {
+
+let li = document.createElement("li");
+li.textContent = user.username;
+serviceListe.appendChild(li);
+
+});
+
+});
+
 </script>
+
+
+<br>
 
 <a href="index.html">Zurück zur Startseite</a>
 
